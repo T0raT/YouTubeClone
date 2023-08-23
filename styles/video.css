@@ -1,0 +1,129 @@
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 16px;
+  row-gap: 40px;
+}
+
+/* This section is for the thumbnail */
+.thumbnail-container {
+  margin-bottom: 8px;
+  position: relative;
+}
+.thumbnail {
+  width: 100%;
+}
+.video-time {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px;
+  background-color: rgba(0, 0, 0, 0.664);
+  color: white;
+  position: absolute;
+  bottom: 10px;
+  right: 8px;
+  border-radius: 2px;
+}
+/* SECTION END  */
+
+/* THIS SECTION IS FOR CHANNEL PICTURE AND VIDEO INFO STATS */
+.video-info-grid {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+}
+.channel-picture {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.video-info-container {
+}
+.video-title {
+  margin-top: 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+.video-author,
+.video-stats {
+  font-size: 12px;
+  color: rgb(96, 96, 96);
+}
+.video-author {
+  margin-bottom: 4px;
+}
+
+/* SECTION END*/
+
+/* THIS SECTION IS FOR THE PREVIEW TOOLTIP */
+.channel-picture-container {
+  position: relative;
+  display: inline-block;
+}
+.channel-picture-container .channel-preview-tooltip {
+  position: absolute;
+  top: 45px;
+
+  display: flex;
+  align-items: center;
+
+  background-color: white;
+
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px grey;
+
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  white-space: nowrap;
+}
+.channel-picture-container:hover .channel-preview-tooltip {
+  transition: opacity 0.2s ease-in-out;
+  opacity: 1;
+}
+.tooltip-channel-picture {
+  width: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.tooltip-channel-name {
+  margin-left: 5px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.tooltip-channel-stats {
+  margin-left: 5px;
+  font-size: 14px;
+  color: rgb(100, 100, 100);
+}
+
+/* ALL MEDIA QUERIES */
+
+@media (max-width: 800px) {
+  .video-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 799px) and (max-width: 999px) {
+  .video-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1000px) {
+  .video-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .video-title {
+    font-size: 16px;
+  }
+  .video-author,
+  .video-stats {
+    font-size: 14px;
+  }
+}
